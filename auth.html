@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Municipal - Autenticación</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* estilos mínimos para centrar la tarjeta */
+    body { display:flex; align-items:center; justify-content:center; min-height:100vh; background:#f3f6fb; font-family:Arial, sans-serif; margin:0; }
+    .card { background:#fff; padding:22px; border-radius:12px; width:360px; box-shadow:0 8px 30px rgba(10,20,40,0.06); }
+    .tabs { display:flex; gap:8px; margin-bottom:12px; }
+    .tabs button { flex:1; padding:8px; border-radius:8px; border:none; cursor:pointer; background:#e6eef9; }
+    .tabs button.active { background:#2b6cb0; color:#fff; }
+    label{display:block;margin-top:8px;font-size:0.9rem}
+    input{width:100%;padding:8px;margin-top:6px;border:1px solid #e2e8f0;border-radius:8px}
+    .action { margin-top:14px; display:flex; gap:8px; }
+    .btn { flex:1; padding:10px; border-radius:8px; border:none; background:#2b6cb0;color:#fff; cursor:pointer }
+    .small { font-size:0.85rem; color:#6b7280; margin-top:10px; text-align:center }
+    .msg { margin-top:8px; font-size:0.9rem }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 style="margin:0 0 8px 0">Bienvenido</h2>
+
+    <div class="tabs">
+      <button id="tab-login" class="active">Iniciar sesión</button>
+      <button id="tab-register">Registrarse</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="panel-login">
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="usuario@ejemplo.com"/>
+      <label>Contraseña</label>
+      <input id="loginPass" type="password" placeholder="********"/>
+      <div class="action">
+        <button id="btnLogin" class="btn">Iniciar sesión</button>
+      </div>
+      <div id="loginMsg" class="msg"></div>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="panel-register" style="display:none">
+      <label>Nombre completo</label>
+      <input id="regName" type="text" placeholder="Ej: María Pérez"/>
+      <label>Email</label>
+      <input id="regEmail" type="email" placeholder="correo@ejemplo.com"/>
+      <label>Contraseña</label>
+      <input id="regPass" type="password" placeholder="********"/>
+      <div class="action">
+        <button id="btnRegister" class="btn">Registrarme</button>
+      </div>
+      <div id="regMsg" class="msg"></div>
+    </div>
+
+    <div class="small">Municipal - Servicio de trámites</div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

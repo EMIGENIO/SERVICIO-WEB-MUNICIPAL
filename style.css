@@ -1,0 +1,62 @@
+body{font-family: Arial, sans-serif; margin:0; padding:0; background:#f6f7fb; color:#222}
+header{background:#2c3e50; color:#fff; padding:16px; text-align:center}
+main{padding:16px; display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:12px}
+.panel{background:#fff; padding:12px; border-radius:8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08)}
+label{display:block; margin:6px 0}
+input{width:100%; padding:6px; margin-top:4px}
+button{margin-top:8px; padding:8px 12px; background:#2980b9; color:#fff; border:none; border-radius:6px; cursor:pointer}
+pre{background:#efefef; padding:8px; border-radius:6px; max-height:180px; overflow:auto}
+footer{text-align:center; padding:12px; font-size:0.9em; color:#666}
+
+/* Tabla de solicitudes */
+.req-table { width:100%; border-collapse: collapse; margin-top:8px; }
+.req-table th, .req-table td { border:1px solid #e2e8f0; padding:8px; text-align:left; font-size:0.95rem; vertical-align:top; }
+.req-table thead { background:#f1f5f9; }
+.btn-view { padding:6px 8px; background:#2b6cb0; color:white; border:none; border-radius:4px; cursor:pointer }
+.btn-del { padding:6px 8px; background:#c53030; color:white; border:none; border-radius:4px; cursor:pointer }
+.btn-danger { padding:8px 10px; background:#c53030; color:white; border:none; border-radius:6px; cursor:pointer }
+
+/* Modal simple */
+.modal-hidden { display:none; position:fixed; left:0; top:0; width:100%; height:100%; align-items:center; justify-content:center; background: rgba(0,0,0,0.4); }
+.modal-visible { display:flex; position:fixed; left:0; top:0; width:100%; height:100%; align-items:center; justify-content:center; background: rgba(0,0,0,0.4); }
+.modal-content { background:#fff; padding:16px; border-radius:8px; width:90%; max-width:600px; box-shadow:0 4px 16px rgba(0,0,0,0.2); position:relative; }
+.modal-close { position:absolute; right:8px; top:8px; border:none; background:transparent; font-size:18px; cursor:pointer; }
+
+/* ---------- Mejora de la tabla y responsive ---------- */
+.table-wrapper { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:6px; }
+
+.req-table {
+  width:100%;
+  border-collapse: collapse;
+  table-layout: auto; /* deja que las columnas se ajusten según contenido */
+  min-width: 720px;   /* evita que la tabla colapse demasiado en pantallas grandes */
+}
+
+/* Cabeceras y celdas */
+.req-table th, .req-table td {
+  border:1px solid #e9edf2;
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+  word-break: break-word;   /* rompe palabras largas */
+  white-space: normal;      /* permite saltos de línea dentro de la celda */
+}
+
+/* Clases por columna para controlar anchos */
+.req-table th.id, .req-table td.id { width: 28%; max-width: 360px; }   /* ID más ancho para ver el hash */
+.req-table th.type, .req-table td.type { width: 12%; max-width: 120px; white-space:nowrap; }
+.req-table th.desc, .req-table td.desc { width: 40%; max-width: 520px; } /* descripción amplia y con wrap */
+.req-table th.cit, .req-table td.cit { width: 10%; max-width: 80px; white-space:nowrap; }
+.req-table th.date, .req-table td.date { width: 10%; max-width: 140px; }
+
+/* Estética */
+.req-table thead { background:#f8fafc; color:#0f172a; font-weight:600; }
+.req-table tbody tr:nth-child(even){ background:#fbfdff; }
+
+.btn-view, .btn-del { margin-right:6px; }
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 720px) {
+  .req-table { min-width: 600px; }
+  .req-table th, .req-table td { padding:8px; font-size:0.9rem; }
+}

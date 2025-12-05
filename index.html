@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Municipal API - Interfaz demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>API DE REGISTRO MUNICIPAL</h1></header>
+  <main>
+    <section class="panel">
+      
+      <div class="card" style="margin-top:15px; padding:12px;">
+
+      <div id="userInfo" style="margin-top:8px;"></div>
+
+    </section>
+
+
+    <section class="panel">
+      <h2>INFORMACIÓN PÚBLICA</h2>
+      <button id="btnPublic">Obtener información pública</button>
+      <pre id="outPublic"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>ENVIAR SOLICITUD</h2>
+      <label>TIPO: <input id="reqType" value="licencia" /></label><br/>
+      <label>DESCRIPCIÓN: <input id="reqDesc" value="Solicitud de ejemplo" /></label><br/>
+      <button id="btnSubmitReq">Enviar solicitud</button>
+      <pre id="outReq"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>REALIZAR PAGO</h2>
+      <label>MONTO: <input id="payAmount" value="100" /></label><br/>
+      <label>MÉTODO: <input id="payMethod" value="card" /></label><br/>
+      <button id="btnPay">Realizar pago</button>
+      <pre id="outPay"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>MIS SOLICITUDES</h2>
+      <p>Lista las solicitudes asociadas al token actual (ciudadano).</p>
+      <button id="btnListMyReqs">Listar mis solicitudes</button>
+      <div id="outListReqs" class="table-wrapper"></div>
+    </section>
+
+    <section class="panel">
+      <h2>CONSULTAR REGISTRO DE CIUDADANO (STAFF)</h2>
+      <label>ID CIUDADANO: <input id="citId" value="42" /></label><br/>
+      <button id="btnGetCit">Consultar registro</button>
+      <pre id="outCit"></pre>
+    </section>
+
+  </main>
+
+  <!-- Modal simple -->
+  <div id="modal" class="modal-hidden">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">✖</button>
+      <h3>Detalle de solicitud</h3>
+      <div id="modal-body"></div>
+      <div style="margin-top:10px;"><button id="modal-delete" class="btn-danger">Eliminar solicitud</button></div>
+    </div>
+  </div>
+
+  <footer>PROYECTO FINAL - SERVICIO MUNICIPAL</footer>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
