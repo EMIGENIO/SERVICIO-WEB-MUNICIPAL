@@ -44,7 +44,7 @@ document.getElementById('btnLogin').addEventListener('click', async ()=>{
     sessionStorage.setItem('municipal_token', r.data.token);
     sessionStorage.setItem('municipal_name', r.data.name || '');
     sessionStorage.setItem('municipal_role', r.data.role || '');
-    location.href = 'index.html'; // abrir interfaz principal
+    location.href = 'home.html'; // abrir interfaz principal
   } else {
     msg.style.color = '#c53030';
     msg.textContent = r.data?.error || 'Credenciales inválidas';
@@ -73,3 +73,4 @@ document.getElementById('btnRegister').addEventListener('click', async ()=>{
     msg.textContent = r.data?.error || 'Error al registrar';
   }
 });
+
